@@ -4,7 +4,7 @@ using RabbitMQ.Client;
 using Newtonsoft.Json;
 
 var factory=new ConnectionFactory{
-Uri=new Uri("amqp://davidliz:Archer!!77@localhost:5672")
+Uri=new Uri("amqp://guest:guest@localhost:5672")
 
 };
 
@@ -29,3 +29,5 @@ var body=Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(message));
 channel.BasicPublish("","davidqueue", null, body);
 
 //noe producer is ready to pass body to the queue
+
+Console.ReadLine();
